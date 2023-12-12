@@ -13,6 +13,9 @@
 - Sign up form 
 - Form Vallidation
 - Use Ref hook
+- firebase setup
+- deploying our app into production
+- create signup user account
 
 
 # netflix integrated with chatGPT :)
