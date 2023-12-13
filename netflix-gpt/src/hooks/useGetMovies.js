@@ -10,7 +10,6 @@ const useGetMovies = ()=>{
       const response =  await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', OPTIONS);
       const data = await response.json();
       dispatch(addNowPlayingMovies(data));
-      
     }
     useEffect(()=>{
         getNowPlayingMovies();

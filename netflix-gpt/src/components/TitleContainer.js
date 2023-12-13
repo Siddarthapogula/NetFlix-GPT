@@ -3,17 +3,23 @@ import { OPTIONS } from '../utils/constants'
 import {useDispatch, useSelector} from "react-redux"
 import useGetMovies from '../hooks/useGetMovies'
 import { addTrailerVideo } from '../utils/movieSlice'
+import useGetPopularMovies from '../hooks/useGetPopularMovies'
+import useGetTopRatedMovies from '../hooks/useGetTopRatedMovies'
+import useGetUpCommingMovies from '../hooks/useGetUpCommingMovies'
 
 const TitleContainer = () => {
   useGetMovies();
+  useGetPopularMovies();
+  useGetTopRatedMovies();
+  useGetUpCommingMovies();
+
   const dispatch= useDispatch();
   const Movies = useSelector(store => store.movie?.nowPlayingMovies);
  const mainMovie=  Movies?.results[0];
 dispatch(addTrailerVideo(mainMovie));
- console.log(mainMovie);
   return (
     <div className=' w-screen aspect-video bg-gradient-to-r from-black absolute'>
-    <div className=' my-96 mx-16 absolute w-screen   z-30 text-white '>
+    <div className=' my-80 mx-12 absolute w-screen   z-30 text-white '>
       <h1 className='font-semibold text-3xl'>{mainMovie?.title}</h1>
       <p className='text-sm  w-3/12'>{mainMovie?.overview}</p>
       <div className='flex gap-4 my-3'>
