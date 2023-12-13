@@ -1,25 +1,44 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import userSlice from '../utils/userSlice';
-import { getAuth, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { auth } from '../utils/firebase';
-import { useSelector } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { addUser, removeUser } from '../utils/userSlice';
+import { onAuthStateChanged } from "firebase/auth";
+import { useEffect } from 'react';
+import { Logo } from '../utils/constants';
 const Header = () => {
+
+  const dispatch = useDispatch();
   const user = useSelector((store) => store.user)
   const navigate = useNavigate();
   const handleSignOut = ()=>{
-    signOut(auth).then(() => {
-      navigate("/")
-    }).catch((error) => {
+    signOut(auth).then(() => {}).
+    catch((error) => {
       // An error happened.
     });
   }
+  useEffect(()=>{
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const {uid, email, displayName, } = user;
+        dispatch(addUser({uid:uid, email:email, displayName: displayName}));
+        navigate("/browse");
+      } 
+      else {
+        dispatch(removeUser());
+        navigate("/");
+
+      }
+    });
+
+
+  },[])
 
   return (
     <div className=' w-full absolute z-10 bg-gradient-to-b from-black flex justify-between'>
       <div>
-        <img className='w-52 ' src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png' />
+        <img className='w-52 ' src= {Logo} />
       </div>
       {user&&
       <div>

@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { updateProfile } from "firebase/auth";
 import { addUser } from '../utils/userSlice';
 import { useDispatch } from 'react-redux';
+import { BG_IMG } from '../utils/constants';
 
 
 const Login1 = () => {
@@ -33,7 +34,6 @@ const Login1 = () => {
       createUserWithEmailAndPassword(auth, Email.current.value, Password.current.value)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
               updateProfile(user, {
               displayName: Name.current.value
                }).then(() => {
@@ -71,7 +71,7 @@ const Login1 = () => {
     <div>
     <Header/>
     <div className=" absolute bg-gradient-to-b from-black">
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/b4c7f092-0488-48b7-854d-ca055a84fb4f/5b22968d-b94f-44ec-bea3-45dcf457f29e/IN-en-20231204-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="bg-theme" /> 
+        <img src={BG_IMG } alt="bg-theme" /> 
     </div>
     <form onSubmit={(e)=>e.preventDefault()} className=' text-white absolute bg-black w-4/12 my-36 mx-auto right-0 left-0 rounded-sm p-16 bg-opacity-80'>
 
