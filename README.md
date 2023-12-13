@@ -16,6 +16,10 @@
 - firebase setup
 - deploying our app into production
 - create signup user account
+- created a store using redux
+- created tmdb
+- added now playing movies
+- done with the main container
 
 
 # netflix integrated with chatGPT :)
