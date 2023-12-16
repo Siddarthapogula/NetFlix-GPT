@@ -7,7 +7,8 @@ import { useEffect } from "react";
 
 const useGetTrailer = (movieId) => {
   const dispatch = useDispatch();
-  const trailer = useSelector(store=> store.movie.TopRatedMovies);
+  // const trailer = useSelector(store=> store.movie.trailerVideo);
+console.log(movieId);
 
 
   const getMovieTrailer = async () => {
@@ -17,10 +18,12 @@ const useGetTrailer = (movieId) => {
         OPTIONS
       );
       const data = await response.json();
+      console.log(data);
       const filteredData = data?.results.filter(
         (movie) => movie.type === "Trailer" || movie.type === "clip"
       );
       const trailer = filteredData?.length ? filteredData[0] : null;
+      console.log(trailer);
 
       // Check if trailer exists before dispatching
       if (trailer) {
@@ -30,9 +33,8 @@ const useGetTrailer = (movieId) => {
       console.error("Error fetching movie trailer:", error);
     }
   };
-
   useEffect(() => {
-    !trailer && getMovieTrailer()
+     getMovieTrailer()
   }, [movieId, dispatch]); // Include movieId and dispatch in the dependency array
 
   // You might also want to return some value or use the data in your component

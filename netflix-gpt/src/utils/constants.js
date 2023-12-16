@@ -5,7 +5,7 @@ export const OPTIONS =  {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer '+process.env.REACT_APP_TMDB_KEY,
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MzIyMTkyMzgzZTE3MTVhZTliNmJmMTBkNzI2NDEyNSIsInN1YiI6IjY1Nzg0NTU5YWY1OGNiMDBhZWE1YmVhZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Mh-lFW-gW7MHFEhWe4oPScqqaLHMXTPh4h6X270Duoo',
     }
   };
 
@@ -32,6 +32,4 @@ export const langSet = {
     searchBtn:"ढूँढ",
   }
 }
-
-
-export const OPENAI_KEY = "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";
+export const OPENAI_KEY = "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";

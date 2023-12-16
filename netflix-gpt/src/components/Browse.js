@@ -11,16 +11,17 @@ const Browse = () => {
   const allowGpt = useSelector(store => store.gpt.ShowGpt);
 
   return (
-    <div>
+    <div className='bg-black'>
     <Header/>
     {allowGpt? <GptSearch/>:
-    <>
-     <MainContainer/>
-      <SecondContainer/>
-    </>
-     }
+    <div className="">
+      <div>
+      <MainContainer/>
+    <SecondContainer/>
+      </div>
     
-   
+    </div>
+     }
     </div>
   )
 }

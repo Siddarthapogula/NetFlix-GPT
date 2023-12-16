@@ -25,6 +25,7 @@
 - upcomming movies
 -  top rated
 -  nowplaying movies"
+-  
 
 
 

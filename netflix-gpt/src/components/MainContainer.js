@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from "react-redux"
 const MainContainer = () => {
   const Movies = useSelector(store => store.movie?.nowPlayingMovies);
   return (
-    <div className=''>
+    <div>
         <TitleContainer/>
         <BgVideoContainer movieId = {Movies?.results[0]?.id}/>
     </div>

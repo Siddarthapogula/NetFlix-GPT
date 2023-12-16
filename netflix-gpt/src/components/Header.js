@@ -46,13 +46,13 @@ const Header = () => {
   }
 
   return (
-    <div className=' w-full fixed z-10 bg-gradient-to-b  from-black flex justify-between'>
+    <div className=' flex-col md:flex-row justify-center md:justify-between  w-full fixed z-10 bg-gradient-to-b  from-black flex '>
       <div>
-        <img  className='w-52 block sm:block' src= {Logo} />
+        <img  className='w-52 block m-auto md:m-0' src= {Logo} />
       </div>
 
       {user&&
-      <div className=' mr-3'>
+      <div className=' m-auto md:m-0'>
         {isGpt && 
             <select onClick={handleLanguage} className=' bg-gray-800 text-white rounded-lg '>
               {Langs.map((language)=><option key={language.id}  >{language.lang}</option>)}

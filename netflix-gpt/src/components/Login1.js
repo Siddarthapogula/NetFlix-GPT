@@ -68,12 +68,13 @@ const Login1 = () => {
   }
 
   return (
-    <div className='bg-gradient-to-b from-black'>
+    <div className='bg-gradient-to-b from-black '>
     <Header/>
     <div className=" absolute ">
-        <img src={BG_IMG } className='hidden  sm:block  ' alt="bg-theme" /> 
+        <img src={BG_IMG } className='h-screen md:h-full object-cover md:w-full ' alt="bg-theme" /> 
     </div>
-    <form onSubmit={(e)=>e.preventDefault()} className=' text-white absolute  bg-black   sm:w-4/12 w-full h-full my-36 mx-auto right-0 left-0 rounded-sm p-16 bg-opacity-80'>
+    <form onSubmit={(e)=>e.preventDefault()} className=' text-white absolute  bg-black  
+     md:w-4/12 w-full h-full my-28 md:my-32 mx-auto right-0 left-0 rounded-sm p-16 bg-opacity-80'>
 
       <h1 className='  font-semibold text-3xl py-4'>{sign?"Sign In":"Sign up"}</h1>
 
