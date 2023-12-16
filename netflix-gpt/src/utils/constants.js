@@ -5,9 +5,33 @@ export const OPTIONS =  {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MzIyMTkyMzgzZTE3MTVhZTliNmJmMTBkNzI2NDEyNSIsInN1YiI6IjY1Nzg0NTU5YWY1OGNiMDBhZWE1YmVhZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Mh-lFW-gW7MHFEhWe4oPScqqaLHMXTPh4h6X270Duoo'
+      Authorization: 'Bearer '+process.env.REACT_APP_TMDB_KEY,
     }
   };
 
 
   export const IMG_CDN = "https://image.tmdb.org/t/p/w500";
+
+  export const Langs = [
+    { id:12, lang:"English"}
+  ,  { id:13,lang:"Hindi"}
+  , { id:14, lang:"Telugu"}
+];
+
+export const langSet = {
+  English:{
+    GptSearchHolder: "GPT at your service! Tell me keywords or preferences, and lets find your perfect movie. ",
+    searchBtn:"Search",
+  },
+  Telugu:{
+    GptSearchHolder: "మీ సేవలో జిపిటి! కీలక పదాలు లేదా ప్రాధాన్యతలను నాకు చెప్పండి మరియు మీ పరిపూర్ణ చలనచిత్రాన్ని కనుగొందాం. ",
+    searchBtn:"వెతుకు",
+  },
+  Hindi:{
+    GptSearchHolder: "जीपीटी आपकी सेवा में! मुझे कीवर्ड या प्राथमिकताएं बताएं, और अपनी सही फिल्म ढूंढें। ",
+    searchBtn:"ढूँढ",
+  }
+}
+
+
+export const OPENAI_KEY = "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";

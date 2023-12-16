@@ -2,14 +2,25 @@ import React from 'react'
 import Header from './Header'
 import MainContainer from './MainContainer'
 import SecondContainer from './SecondContainer'
+import GptSearch from './GptSearch'
+import { useSelector } from 'react-redux'
 
 
 const Browse = () => {
+
+  const allowGpt = useSelector(store => store.gpt.ShowGpt);
+
   return (
     <div>
     <Header/>
-    <MainContainer/>
-    <SecondContainer/>
+    {allowGpt? <GptSearch/>:
+    <>
+     <MainContainer/>
+      <SecondContainer/>
+    </>
+     }
+    
+   
     </div>
   )
 }

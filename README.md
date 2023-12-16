@@ -20,6 +20,12 @@
 - created tmdb
 - added now playing movies
 - done with the main container
+- added second container movie list with horizontal scroll
+-  like 
+- upcomming movies
+-  top rated
+-  nowplaying movies"
+
 
 
 # netflix integrated with chatGPT :)

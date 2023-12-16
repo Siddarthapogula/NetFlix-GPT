@@ -1,12 +1,14 @@
 
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { OPTIONS } from "../utils/constants";
 import { addTrailerVideo } from "../utils/movieSlice";
 import { useEffect } from "react";
 
 const useGetTrailer = (movieId) => {
   const dispatch = useDispatch();
+  const trailer = useSelector(store=> store.movie.TopRatedMovies);
+
 
   const getMovieTrailer = async () => {
     try {
@@ -30,7 +32,7 @@ const useGetTrailer = (movieId) => {
   };
 
   useEffect(() => {
-    getMovieTrailer();
+    !trailer && getMovieTrailer()
   }, [movieId, dispatch]); // Include movieId and dispatch in the dependency array
 
   // You might also want to return some value or use the data in your component

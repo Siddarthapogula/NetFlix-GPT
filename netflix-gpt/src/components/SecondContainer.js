@@ -8,10 +8,10 @@ const SecondContainer = () => {
   return (
     <div className=' bg-black'>
       <div className=' -mt-36 relative text-white'>
-      <MovieLists title = {"Now Playing"} movies = {movies?.nowPlayingMovies}/>
-      <MovieLists title = {"Trending"} movies = {movies?.TopRatedMovies} />
-      <MovieLists title = {"Popular"} movies = {movies?.PopularMovies}/>
-      <MovieLists title = {"Up Comming"} movies = {movies?.UpCommingMovies} />
+      <MovieLists title = {"Now Playing"} movies = {movies?.nowPlayingMovies?.results}/>
+      <MovieLists title = {"Trending"} movies = {movies?.TopRatedMovies?.results} />
+      <MovieLists title = {"Popular"} movies = {movies?.PopularMovies?.results}/>
+      <MovieLists title = {"Up Comming"} movies = {movies?.UpCommingMovies?.results} />
       </div>
 
     </div>
