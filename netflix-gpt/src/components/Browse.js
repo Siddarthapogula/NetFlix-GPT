@@ -17,9 +17,8 @@ const Browse = () => {
     <div className="">
       <div>
       <MainContainer/>
-    <SecondContainer/>
+      <SecondContainer/>
       </div>
-    
     </div>
      }
     </div>

@@ -51,17 +51,12 @@ const Login1 = () => {
     }
     else{
       signInWithEmailAndPassword(auth,Email.current.value, Password.current.value)
-      
-  .then((userCredential) => {
-    const user = userCredential.user;
-  
-    navigate("/browse")
-  })
-  .catch((error) => {
+      .then((userCredential) => {
+        console.log(userCredential);
+      navigate("/browse")
+  }).catch((error) => {
     const errorCode = error.code;
-    const errorMessage = error.message;
     const occuredError = errorCode;
-
     setIsValid(occuredError);
   });
     }
@@ -96,7 +91,6 @@ const Login1 = () => {
        <p onClick={HandleIsSignClick} 
        className=' cursor-pointer hover:underline'>
         {sign?"New to Netflix? Sign up now.":"Already Resgistered? Sign In now."}</p>
-
     </form>
     </div>
 

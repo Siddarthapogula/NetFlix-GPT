@@ -7,7 +7,6 @@ import useGetTrailer from '../hooks/useGetTrailer';
 const BgVideoContainer = ({movieId}) => {
 
   const TrailerId = useSelector(store => store?.movie?.trailerVideo?.key);
-  const dispatch = useDispatch();
   useGetTrailer(movieId);
   return (
     <div>

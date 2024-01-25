@@ -7,9 +7,6 @@ import { useEffect } from "react";
 
 const useGetTrailer = (movieId) => {
   const dispatch = useDispatch();
-  // const trailer = useSelector(store=> store.movie.trailerVideo);
-console.log(movieId);
-
 
   const getMovieTrailer = async () => {
     try {
@@ -18,12 +15,10 @@ console.log(movieId);
         OPTIONS
       );
       const data = await response.json();
-      console.log(data);
       const filteredData = data?.results.filter(
         (movie) => movie.type === "Trailer" || movie.type === "clip"
       );
       const trailer = filteredData?.length ? filteredData[0] : null;
-      console.log(trailer);
 
       // Check if trailer exists before dispatching
       if (trailer) {

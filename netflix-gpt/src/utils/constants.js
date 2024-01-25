@@ -32,4 +32,4 @@ export const langSet = {
     searchBtn:"ढूँढ",
   }
 }
-export const OPENAI_KEY = "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";
+export const OPENAI_KEY = "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";

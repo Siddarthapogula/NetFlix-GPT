@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { Langs, Logo } from '../utils/constants';
 import { toggleGptSearch } from '../utils/GptSlice';
 import { setLanguage } from '../utils/LangSlice';
+
 const Header = () => {
 
   const isGpt = useSelector(store=> store.gpt.ShowGpt)
@@ -18,7 +19,6 @@ const Header = () => {
   const handleSignOut = ()=>{
     signOut(auth).then(() => {}).
     catch((error) => {
-      // An error happened.
     });
   }
   useEffect(()=>{
@@ -31,11 +31,8 @@ const Header = () => {
       else {
         dispatch(removeUser());
         navigate("/");
-
       }
     });
-
-
   },[])
 
   const handleSearchType = ()=>{

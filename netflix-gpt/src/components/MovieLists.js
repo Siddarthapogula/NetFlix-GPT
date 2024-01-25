@@ -3,9 +3,7 @@ import MovieCards from './MovieCards'
 import { useDispatch, useSelector } from 'react-redux';
 
 const MovieLists = ({title, movies}) => {
-    // console.log(movies?.results);
     const Movies = movies;
-    // console.log(title)
 
   return Movies && (
     <div className='p-6'>

@@ -19,11 +19,4 @@ const SecondContainer = () => {
     </div>
   )
 }
-
-/**
- *  second container 
- *    - movies list
- *        - horizontal * n scrolls
- *        - movie card 
- */
 export default SecondContainer
