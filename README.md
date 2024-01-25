@@ -5,7 +5,7 @@
 ## pura project ka planning..
 
 ## Netflix -GPT :
-- create-react-app : it is too easy right where i were doing this from the scracth using parcel :(
+- create-react-app : it is too easy right where i were doing this from the scratch using parcel :(
 - configure Tailwind CSS
 - Header
 - Routing Of App
